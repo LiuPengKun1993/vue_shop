@@ -3,7 +3,7 @@
 
         <!-- 标题区域 -->
         <div class="login_title">
-            欢迎来到全球最大电商网
+            电商后台管理系统
         </div>
 
         <div class="login_box">

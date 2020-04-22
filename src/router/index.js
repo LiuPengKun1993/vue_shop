@@ -2,6 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
+import Welcome from '../components/Welcome.vue'
+import Users from '../components/user/Users.vue'
+import Roles from '../components/user/Roles.vue'
+import Rights from '../components/user/Rights.vue'
+import Categories from '../components/user/Categories.vue'
+import Goods from '../components/user/Goods.vue'
+import Orders from '../components/user/Orders.vue'
+import Params from '../components/user/Params.vue'
+import Reports from '../components/user/Reports.vue'
 
 Vue.use(VueRouter)
 
@@ -9,7 +18,22 @@ const routes = [
   { path: '/login', component: Login },
   // 路由重定向
   { path: '/', redirect: '/login' },
-  { path: '/home', component: Home }
+  {
+    path: '/home',
+    component: Home,
+    redirect: '/welcome',
+    children: [
+      { path: '/welcome', component: Welcome },
+      { path: '/users', component: Users },
+      { path: '/roles', component: Roles },
+      { path: '/rights', component: Rights },
+      { path: '/reports', component: Reports },
+      { path: '/params', component: Params },
+      { path: '/orders', component: Orders },
+      { path: '/goods', component: Goods },
+      { path: '/categories', component: Categories }
+    ]
+  }
 ]
 
 const router = new VueRouter({
