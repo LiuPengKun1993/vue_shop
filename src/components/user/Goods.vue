@@ -157,7 +157,8 @@ export default {
         },
         addGoods () {
             this.$router.push('/goods/add')
-        }
+        },
+        editUser () {}
     }
 }
 </script>
